@@ -8,8 +8,8 @@
 }
 .join_info h2 {
   text-align: left;
-  color: black;
-  margin-top: 4rem;
+  color: rgb(8, 8, 8);
+  padding-top: 7rem;
 }
 
 .join_info h1 {
@@ -115,6 +115,14 @@
   color: white;
   cursor: pointer;
 }
+.input-file-buttonReset {
+  margin-left: 1rem;
+  padding: 1.3rem 2rem;
+  background-color: #131212;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
 
 .detail_top_img img {
   width: 70%;
@@ -162,6 +170,7 @@
   background: #000;
   color: #fff;
   margin: 10rem auto;
+  cursor: pointer;
 }
 
 @media (max-width: 1080px) {

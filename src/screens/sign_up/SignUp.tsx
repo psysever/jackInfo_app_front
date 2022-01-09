@@ -80,7 +80,7 @@ function SignUp() {
     watch,
     setError,
   } = useForm<IForm>({
-    mode: 'onBlur',
+    mode: 'onChange',
   })
   const pwd = useRef({})
   pwd.current = watch('pwd', '')

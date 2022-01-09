@@ -53,7 +53,7 @@ function Header({ setNavOpen, scrollState }: any) {
 
               {isLoggedIn ? (
                 <li>
-                  <Link onClick={logUserOut} to="/signIn">
+                  <Link onClick={logUserOut} to="/">
                     logOut
                   </Link>
                 </li>

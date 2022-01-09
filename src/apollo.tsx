@@ -15,7 +15,7 @@ export const logUserIn = (token: any) => {
 }
 export const logUserOut = () => {
   localStorage.removeItem(TOKEN)
-  window.location.reload()
+  window.location.replace('/')
   alert('로그아웃되셧습니다.')
 }
 

@@ -15,13 +15,14 @@
 }
 
 .product_text h4 {
-  font-size: 2.45rem;
+  font-size: 4rem;
   margin-bottom: 2.2rem;
 }
 
 .product .product_text > p {
   margin-bottom: 3rem;
-  line-height: 1.5;
+  line-height: 2;
+  font-size: 3rem;
 }
 
 .product_text > span {
@@ -46,23 +47,25 @@
 .product .buy_box {
   display: flex;
   justify-content: space-between;
-  margin-top: 2.2rem;
 }
 
-.product .buy_box div:first-child a {
-  width: 8rem;
-  height: 6rem;
-  padding: 1.5rem 2rem;
+.product .buy_box div:first-child p {
+  width: 12rem;
+  line-height: 6rem;
+  text-align: center;
   border: 0.1rem solid #000;
   font-size: 1.8rem;
+  cursor: pointer;
 }
-.product .buy_box div:last-child a {
+.product .buy_box div:last-child p {
   width: 33.5rem;
+  margin-left: 2.3rem;
   line-height: 6rem;
   text-align: center;
   background: #000;
   color: #fff;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .product_info {
@@ -111,12 +114,14 @@
 }
 
 .product_guide h4 {
-  font-size: 1.8rem;
-  margin-bottom: 3rem;
+  font-size: 4rem;
+  margin-bottom: 5rem;
 }
 
 .product_guide p {
   line-height: 1.6;
+  font-size: 2.3rem;
+  font-weight: 400;
 }
 
 /* product_review */

@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   color: #999;
 }
 
@@ -61,25 +61,32 @@
 [class$='_item_list'] {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -2.6rem;
 }
 
-[class$='_item_list'] li {
+[class$='_item_list'] li:not(:first-child) {
   position: relative;
-  width: 31.3%;
+  width: 35rem;
   background: #f8f7f5;
-  margin-left: 2%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  margin-top: 4%;
+}
+[class$='_item_list'] li:first-child {
+  position: relative;
+  width: 35rem;
+  background: #f8f7f5;
   margin-bottom: 2%;
   margin-top: 4%;
 }
 
 [class$='_item_list'] li .photo {
-  padding: 3.8rem 5rem 6.6rem;
+  /* padding: 3.8rem 5rem 5.5rem; */
   cursor: pointer;
 }
+
 [class$='_item_list'] li .likes {
   display: flex;
-  margin: 2rem;
+  margin: 4rem 2rem;
   justify-content: space-between;
   cursor: pointer;
 }
@@ -89,18 +96,20 @@
 }
 
 [class$='_item_list'] [class$='_img'] {
-  width: 23rem;
-  margin: 0 auto 3.4rem;
+  width: 100%;
+  height: 25rem;
+  object-fit: fill;
 }
 
 [class$='_item_list'] [class$='_text'] {
   width: 100%;
+  margin: 2rem;
 }
 
 [class$='_item_list'] [class$='_text'] h5 {
   font-size: 3rem;
   font-weight: 500;
-  margin-bottom: 1.1rem;
+  margin-bottom: 2.5rem;
 }
 
 [class$='_item_list'] [class$='_text'] p:nth-child(2) {
@@ -191,11 +200,6 @@
 
   [class$='_item_list'] li a {
     padding: 6.3rem 4.9rem 9.5rem 5.7rem;
-  }
-
-  [class$='_item_list'] [class$='_img'] {
-    width: 26.5rem;
-    margin: 0 auto 7rem;
   }
 
   [class$='_item_list'] [class$='_text'] h5 {

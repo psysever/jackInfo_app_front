@@ -68,6 +68,18 @@ function Mypage() {
               <p>고객님의 프로필 이미지 포함 개인정보를 관리하는 공간입니다.</p>
             </Link>
           </li>
+          <li>
+            <Link to="/signup_modify">
+              <h4>비밀번호변경</h4>
+              <p>고객님의 프로필 이미지 포함 개인정보를 관리하는 공간입니다.</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/signup_modify">
+              <h4>회원 탈퇴</h4>
+              <p>고객님의 프로필 이미지 포함 개인정보를 관리하는 공간입니다.</p>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

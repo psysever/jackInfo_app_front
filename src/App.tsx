@@ -39,12 +39,19 @@ import AboutMe from './screens/about_me/AboutMe'
 import Mypage from './screens/mypage/MyPage'
 import SignUpModify from './screens/sign_up/SignUpModify'
 import PhotoPolios from './screens/photopolios/Photopolios'
-import PhotoPoliosDetail from './screens/photopolios/photoPoliosDetail'
-import UploadForm from './screens/photopolios/UploadForm'
-import UploadFormCss from './screens/photopolios/UploadFormCss'
-import UploadFormRJ from './screens/photopolios/UploadFormRJ'
-import UploadFormRN from './screens/photopolios/UploadFormRN'
-import UploadFormNode from './screens/photopolios/UploadFormNode'
+import PhotoPoliosDetailNode from './screens/photopolios/photoPoliosDetailNode'
+
+import PhotoPoliosDetailCss from './screens/photopolios/photoPoliosDetailCss'
+import PhotoPoliosDetailRJ from './screens/photopolios/photoPoliosDetailRJ'
+import PhotoPoliosDetailRN from './screens/photopolios/photoPoliosDetailRN'
+import UploadFormCss from './screens/photopolios/createPhotoPolios/UploadFormCss'
+import UploadFormRJ from './screens/photopolios/createPhotoPolios/UploadFormRJ'
+import UploadFormRN from './screens/photopolios/createPhotoPolios/UploadFormRN'
+import UploadFormNode from './screens/photopolios/createPhotoPolios/UploadFormNode'
+import EditPhotoPoliosNode from './screens/photopolios/editPhotoPolios/EditPhotoPoliosNode'
+import EditPhotoPoliosCss from './screens/photopolios/editPhotoPolios/EditPhotoPoliosCss'
+import EditPhotoPoliosRJ from './screens/photopolios/editPhotoPolios/EditPhotoPoliosRJ'
+import EditPhotoPoliosRN from './screens/photopolios/editPhotoPolios/EditPhotoPoliosRN'
 
 function App() {
   let location = useLocation()
@@ -93,13 +100,35 @@ function App() {
           <Route path="/about_me" component={AboutMe} />
           {/* PhotoPoliosPage */}
           <Route path="/photopolios" component={PhotoPolios} />
-          <Route path="/photopoliosDetail" component={PhotoPoliosDetail} />
+          <Route
+            path="/photopolios_detail_node"
+            component={PhotoPoliosDetailNode}
+          />
+          <Route
+            path="/photopolios_detail_css"
+            component={PhotoPoliosDetailCss}
+          />
+          <Route
+            path="/photopolios_detail_rj"
+            component={PhotoPoliosDetailRJ}
+          />
+          <Route
+            path="/photopolios_detail_rn"
+            component={PhotoPoliosDetailRN}
+          />
           {/* 게시물 등록하기 */}
-          <Route path="/uploadform" component={UploadForm} />
           <Route path="/uploadform_css" component={UploadFormCss} />
           <Route path="/uploadform_rj" component={UploadFormRJ} />
           <Route path="/uploadform_rn" component={UploadFormRN} />
           <Route path="/uploadform_node" component={UploadFormNode} />
+          {/* 게시물 수정하기 */}
+          <Route
+            path="/edit_photopolios_node"
+            component={EditPhotoPoliosNode}
+          />
+          <Route path="/edit_photopolios_css" component={EditPhotoPoliosCss} />
+          <Route path="/edit_photopolios_rj" component={EditPhotoPoliosRJ} />
+          <Route path="/edit_photopolios_rn" component={EditPhotoPoliosRN} />
           {/* 마이페이지 */}
           <Route path="/mypage" component={Mypage} />
           <Route path="/signup_modify" component={SignUpModify} />
