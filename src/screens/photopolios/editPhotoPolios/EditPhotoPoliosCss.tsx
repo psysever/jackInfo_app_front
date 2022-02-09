@@ -78,8 +78,13 @@ const Edit_Css_MUTATION = gql`
 `
 
 function EditPhotoPoliosCss(props: any) {
-  const { register, handleSubmit, setValue, getValues } = useForm()
+  const { register, handleSubmit, setValue, getValues } = useForm<any>({
+    mode: 'onChange',
+  })
   const pInfo = props.location.state.pInfoCss
+  console.log('pInfo')
+  console.log(pInfo)
+  const [pInfoFile, setPInfoFile] = useState<any>(pInfo.file)
   const [pInfoFile2, setPInfoFile2] = useState<any>(pInfo.file2)
   const [pInfoFile3, setPInfoFile3] = useState<any>(pInfo.file3)
   const [pInfoFile4, setPInfoFile4] = useState<any>(pInfo.file4)
@@ -88,7 +93,7 @@ function EditPhotoPoliosCss(props: any) {
   const [pInfoFile7, setPInfoFile7] = useState<any>(pInfo.file7)
   const [pInfoFile8, setPInfoFile8] = useState<any>(pInfo.file8)
 
-  const decodedUrl1 = decodeURI(pInfo.file).split('/')[4]
+  const decodedUrl1 = decodeURI(pInfoFile).split('/')[4]
   const decodedUrl2 = decodeURI(pInfoFile2).split('/')[4]
   const decodedUrl3 = decodeURI(pInfoFile3).split('/')[4]
   const decodedUrl4 = decodeURI(pInfoFile4).split('/')[4]
@@ -185,7 +190,7 @@ function EditPhotoPoliosCss(props: any) {
     }
   }
 
-  const [editPhotoNodeMutaion] = useMutation<any>(Edit_Css_MUTATION, {
+  const [editPhotoCssMutaion] = useMutation<any>(Edit_Css_MUTATION, {
     onCompleted,
   })
   const onSubmitValid: SubmitHandler<IForm> = (data) => {
@@ -201,7 +206,7 @@ function EditPhotoPoliosCss(props: any) {
       subject8,
       skils,
     }: any = getValues()
-    editPhotoNodeMutaion({
+    editPhotoCssMutaion({
       variables: {
         id: pInfo.id,
         caption: caption,
@@ -226,16 +231,15 @@ function EditPhotoPoliosCss(props: any) {
     })
   }
 
-  const fileInput: any = useRef()
-
   return (
     <div className="join">
-      <PageTitle title="Edit_Photo_CSS" />
+      <PageTitle title="Edit_Photo_Css" />
       <h2>Edit PhotoPolios</h2>
       <form onSubmit={handleSubmit(onSubmitValid)}>
         <div className="join_info">
           <h2>-1. 포토폴리오 메인사진제목(필수)</h2>
           <input
+            defaultValue={pInfo.subject}
             placeholder="포토폴리오 메인사진제목"
             {...register('subject')}
             name="subject"
@@ -286,6 +290,7 @@ function EditPhotoPoliosCss(props: any) {
           <div className="join_info">
             <h2>-2. 동영상 || 사진 메인제목</h2>
             <input
+              defaultValue={pInfo.subject2 && pInfo.subject2}
               placeholder="포토폴리오 메인제목"
               {...register('subject2')}
               name="subject2"
@@ -311,7 +316,6 @@ function EditPhotoPoliosCss(props: any) {
               <input
                 type="file"
                 id="input-file2"
-                ref={fileInput}
                 style={{ display: 'none' }}
                 onChange={({ target: { files }, e }: any) => {
                   if (files.length) {
@@ -347,6 +351,7 @@ function EditPhotoPoliosCss(props: any) {
             </h1>
             <h2>-3. 동영상 || 사진 메인제목</h2>
             <input
+              defaultValue={pInfo.subject3 && pInfo.subject3}
               placeholder="포토폴리오 메인제목"
               {...register('subject3')}
               name="subject3"
@@ -394,9 +399,6 @@ function EditPhotoPoliosCss(props: any) {
                   setDetailImageFile3(null)
                   setDetailImageUrl3(null)
                   setPInfoFile3(null)
-                  console.log('a')
-                  console.log(detailImageFile2)
-                  console.log(detailImageUrl2)
                 }}
               >
                 동영상(mp4) || 사진 초기화
@@ -411,6 +413,7 @@ function EditPhotoPoliosCss(props: any) {
             </h1>
             <h2>-4. 동영상 || 사진 메인제목</h2>
             <input
+              defaultValue={pInfo.subject4 && pInfo.subject4}
               placeholder="포토폴리오 메인제목"
               {...register('subject4')}
               name="subject4"
@@ -458,9 +461,6 @@ function EditPhotoPoliosCss(props: any) {
                   setDetailImageFile4(null)
                   setDetailImageUrl4(null)
                   setPInfoFile4(null)
-                  console.log('a')
-                  console.log(detailImageFile2)
-                  console.log(detailImageUrl2)
                 }}
               >
                 동영상(mp4) || 사진 초기화
@@ -474,6 +474,7 @@ function EditPhotoPoliosCss(props: any) {
             </h1>
             <h2>-5. 동영상 || 사진 메인제목</h2>
             <input
+              defaultValue={pInfo.subject5 && pInfo.subject5}
               placeholder="포토폴리오 메인제목"
               {...register('subject5')}
               name="subject5"
@@ -534,6 +535,7 @@ function EditPhotoPoliosCss(props: any) {
             </h1>
             <h2>-6. 동영상 || 사진 메인제목</h2>
             <input
+              defaultValue={pInfo.subject6 && pInfo.subject6}
               placeholder="포토폴리오 메인제목"
               {...register('subject6')}
               name="subject6"
@@ -594,6 +596,7 @@ function EditPhotoPoliosCss(props: any) {
             </h1>
             <h2>-7. 동영상 || 사진 메인제목</h2>
             <input
+              defaultValue={pInfo.subject7 && pInfo.subject7}
               placeholder="포토폴리오 메인제목"
               {...register('subject7')}
               name="subject7"
@@ -654,6 +657,7 @@ function EditPhotoPoliosCss(props: any) {
             </h1>
             <h2>-8. 동영상 || 사진 메인제목</h2>
             <input
+              defaultValue={pInfo.subject8 && pInfo.subject8}
               placeholder="포토폴리오 메인제목"
               {...register('subject8')}
               name="subject8"
@@ -714,6 +718,7 @@ function EditPhotoPoliosCss(props: any) {
             </h1>
             <h2>-포토폴리오 사용 기술</h2>
             <textarea
+              defaultValue={pInfo.skils && pInfo.skils}
               {...register('skils')}
               placeholder="포토폴리오 사용기술"
               name="skils"
@@ -721,6 +726,7 @@ function EditPhotoPoliosCss(props: any) {
 
             <h2>-포토폴리오설명</h2>
             <textarea
+              defaultValue={pInfo.caption && pInfo.caption}
               placeholder="포토폴리오를 설명"
               {...register('caption')}
               name="caption"

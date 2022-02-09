@@ -103,6 +103,7 @@ function PhotoPolios({ id }: any) {
   const { data } = useQuery<any>(FEED_QUERY, {
     fetchPolicy: 'network-only',
   })
+  console.log(data)
   const fileUrl =
     'https://showjack-uploads.s3.ap-northeast-2.amazonaws.com/uploadPhotoNode/1-1641470076397-%EA%B0%80%EC%9E%85%ED%9B%84-%EA%B4%80%EB%A6%AC%EC%9E%90+%EC%8A%B9%EC%9D%B8+%EB%B0%9C%EB%A6%AC%EB%8D%B0%EC%9D%B4%EC%85%98.mp4'
   const decodeUrl = decodeURI(fileUrl)

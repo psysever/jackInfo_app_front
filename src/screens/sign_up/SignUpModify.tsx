@@ -59,11 +59,8 @@ function SignUpModify() {
       editProfile: { ok, error },
     } = data
     if (ok) {
-      alert('성공')
+      window.location.replace('/mypage')
     }
-
-    console.log('data')
-    console.log(data)
   }
 
   const [editProfileMutation] = useMutation<editProfile, editProfileVariables>(
