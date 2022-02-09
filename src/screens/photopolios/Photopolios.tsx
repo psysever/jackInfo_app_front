@@ -378,29 +378,58 @@ function PhotoPolios({ id }: any) {
             ''
           )}
           <div className="product_list_add">
-            <Link
-              to={
-                tabNow === 1
-                  ? '/uploadform_css'
+            {isLoggedIn ? (
+              <Link
+                to={
+                  tabNow === 1
+                    ? '/uploadform_css'
+                    : tabNow === 2
+                    ? '/uploadform_RJ'
+                    : tabNow === 3
+                    ? '/uploadform_RN'
+                    : tabNow === 4
+                    ? '/uploadform_node'
+                    : ''
+                }
+              >
+                {tabNow === 1
+                  ? 'CSS 게시글 올리기'
                   : tabNow === 2
-                  ? '/uploadform_RJ'
+                  ? 'RJ 게시글 올리기'
                   : tabNow === 3
-                  ? '/uploadform_RN'
+                  ? 'RN 게시글 올리기'
                   : tabNow === 4
-                  ? '/uploadform_node'
-                  : ''
-              }
-            >
-              {tabNow === 1
-                ? 'CSS 게시글 올리기'
-                : tabNow === 2
-                ? 'RJ 게시글 올리기'
-                : tabNow === 3
-                ? 'RN 게시글 올리기'
-                : tabNow === 4
-                ? 'NODE 게시글 올리기'
-                : ''}
-            </Link>
+                  ? 'NODE 게시글 올리기'
+                  : ''}
+              </Link>
+            ) : (
+              <Link
+                onClick={() => {
+                  alert('로그인을 해주세요')
+                }}
+                to={
+                  tabNow === 1
+                    ? '#'
+                    : tabNow === 2
+                    ? '#'
+                    : tabNow === 3
+                    ? '#'
+                    : tabNow === 4
+                    ? '#'
+                    : ''
+                }
+              >
+                {tabNow === 1
+                  ? 'CSS 게시글 올리기'
+                  : tabNow === 2
+                  ? 'RJ 게시글 올리기'
+                  : tabNow === 3
+                  ? 'RN 게시글 올리기'
+                  : tabNow === 4
+                  ? 'NODE 게시글 올리기'
+                  : ''}
+              </Link>
+            )}
           </div>
           <select>
             <option value="상품정렬">정렬보기</option>

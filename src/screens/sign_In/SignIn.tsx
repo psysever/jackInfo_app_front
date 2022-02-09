@@ -130,11 +130,25 @@ function SignIn() {
               </li>
               <li>｜</li>
               <li>
-                <Link to="/IdFind">아이디찾기</Link>
+                <Link
+                  onClick={() => {
+                    alert('준비중입니다.')
+                  }}
+                  to="#"
+                >
+                  아이디찾기
+                </Link>
               </li>
               <li>｜</li>
               <li>
-                <Link to="/PwFind">비밀번호찾기</Link>
+                <Link
+                  onClick={() => {
+                    alert('준비중 입니다.')
+                  }}
+                  to="#"
+                >
+                  비밀번호찾기
+                </Link>
               </li>
             </ul>
           </div>
@@ -142,17 +156,32 @@ function SignIn() {
             <p>SNS 계정으로 로그인 하기</p>
             <ul className="login_sns_list">
               <li>
-                <Link to="#">
+                <Link
+                  onClick={() => {
+                    alert('준비중 입니다.')
+                  }}
+                  to="#"
+                >
                   <img src={i_naver} alt="" />
                 </Link>
               </li>
               <li>
-                <Link to="#">
+                <Link
+                  onClick={() => {
+                    alert('준비중 입니다.')
+                  }}
+                  to="#"
+                >
                   <img src={i_kakao} alt="" />
                 </Link>
               </li>
               <li>
-                <Link to="#">
+                <Link
+                  onClick={() => {
+                    alert('준비중 입니다.')
+                  }}
+                  to="#"
+                >
                   <img src={i_facebook} alt="" />
                 </Link>
               </li>
