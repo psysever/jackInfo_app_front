@@ -81,7 +81,7 @@ function PhotoPoliosDetailRJ(props: any) {
                   <li>
                     <h4>3.{pInfo.subject4}</h4>
                     {pInfo.file4 && pInfo.file4.split('.')[5] === 'mp4' ? (
-                      <ReactPlayer controls url={pInfo.file3} />
+                      <ReactPlayer controls url={pInfo.file4} />
                     ) : (
                       pInfo.file4 && <img src={pInfo.file4} alt={pInfo.file4} />
                     )}
@@ -93,7 +93,7 @@ function PhotoPoliosDetailRJ(props: any) {
                   <li>
                     <h4>4.{pInfo.subject5}</h4>
                     {pInfo.file5 && pInfo.file5.split('.')[5] === 'mp4' ? (
-                      <ReactPlayer controls url={pInfo.file3} />
+                      <ReactPlayer controls url={pInfo.file5} />
                     ) : (
                       pInfo.file5 && <img src={pInfo.file5} alt={pInfo.file5} />
                     )}
@@ -105,7 +105,7 @@ function PhotoPoliosDetailRJ(props: any) {
                   <li>
                     <h4>5.{pInfo.subject6}</h4>
                     {pInfo.file6 && pInfo.file6.split('.')[5] === 'mp4' ? (
-                      <ReactPlayer controls url={pInfo.file3} />
+                      <ReactPlayer controls url={pInfo.file6} />
                     ) : (
                       pInfo.file6 && <img src={pInfo.file6} alt={pInfo.file6} />
                     )}
@@ -117,7 +117,7 @@ function PhotoPoliosDetailRJ(props: any) {
                   <li>
                     <h4>6.{pInfo.subject7}</h4>
                     {pInfo.file7 && pInfo.file7.split('.')[5] === 'mp4' ? (
-                      <ReactPlayer controls url={pInfo.file3} />
+                      <ReactPlayer controls url={pInfo.file7} />
                     ) : (
                       pInfo.file7 && <img src={pInfo.file7} alt={pInfo.file7} />
                     )}
