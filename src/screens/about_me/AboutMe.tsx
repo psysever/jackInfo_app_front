@@ -79,7 +79,7 @@ function AboutMe() {
                   <br />
                   <br />
                   <h4 className="en">
-                    - 더빌드 소프트 2021.06 - 2022.06 (13개월 근무)
+                    - 더빌드 소프트 2021.06 - 2022.01 (8개월 근무)
                   </h4>
                   <br />
                   <br />
@@ -140,7 +140,8 @@ function AboutMe() {
                   </h3>
                   <br />
                   <h3>
-                    -BackEnd : Node.Js,GraphQL-Apollo-server-express,Prisma
+                    -BackEnd :
+                    TypeScript,JavaScript,Node.Js,GraphQL-Apollo-server-express,Prisma
                   </h3>
                   <br />
                   <h3>-DB : postgreSQL,MongGoDB</h3>
@@ -188,7 +189,7 @@ function AboutMe() {
                   <h4 className="en">--자격증 및 교육활동--</h4>
                   <br />
                   <br />
-                  <h4>- 정보처리기사 (2022.05)</h4>
+                  <h4>- 정보처리기사 실기 예정 중(2022.05)</h4>
                   <br />
                   <h4>- 국제영어능력시험 IELTS -IELTS 5.5 취득 (2020. 04)</h4>
                   <br />

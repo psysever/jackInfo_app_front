@@ -47,7 +47,14 @@ function Header({ setNavOpen, scrollState }: any) {
               ) : null}
               {isLoggedIn ? null : (
                 <li>
-                  <Link to="/signUp">Join</Link>
+                  <Link
+                    onClick={() => {
+                      alert('열람을 위해 잠시 block하였습니다.')
+                    }}
+                    to="/#"
+                  >
+                    Join
+                  </Link>
                 </li>
               )}
 
@@ -59,7 +66,14 @@ function Header({ setNavOpen, scrollState }: any) {
                 </li>
               ) : (
                 <li>
-                  <Link to="/signIn">logIn</Link>
+                  <Link
+                    onClick={() => {
+                      alert('열람을 위해 잠시 block하였습니다.')
+                    }}
+                    to="/#"
+                  >
+                    logIn
+                  </Link>
                 </li>
               )}
               {isLoggedIn ? (

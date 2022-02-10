@@ -38,10 +38,10 @@ function Nav({ setNavOpen }: any) {
             </div>
             <ul className={navDown.nav1 ? 'on' : ''}>
               <li>
-                <Link to="/jackInfo_list2">Main</Link>
+                <Link to="/photopolios">Main</Link>
               </li>
               <li>
-                <Link to="">준비중</Link>
+                <Link to="#">준비중</Link>
               </li>
             </ul>
           </li>
@@ -64,10 +64,10 @@ function Nav({ setNavOpen }: any) {
         <div className="nav_bottom">
           <ul className="nav_login en">
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="#">Login</Link>
             </li>
             <li>
-              <Link to="/join">Join</Link>
+              <Link to="#">Join</Link>
             </li>
           </ul>
           <ul className="nav_logout en">
@@ -75,7 +75,7 @@ function Nav({ setNavOpen }: any) {
               <Link to="#">Logout</Link>
             </li>
             <li>
-              <Link to="/mypage">My page</Link>
+              <Link to="#">My page</Link>
             </li>
           </ul>
           <div className="nav_sns">
