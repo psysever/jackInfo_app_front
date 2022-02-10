@@ -70,7 +70,7 @@ function Header({ setNavOpen, scrollState }: any) {
                     onClick={() => {
                       alert('열람을 위해 잠시 block하였습니다.')
                     }}
-                    to="/#"
+                    to="/signIn"
                   >
                     logIn
                   </Link>
