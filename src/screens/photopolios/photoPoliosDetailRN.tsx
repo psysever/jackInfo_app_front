@@ -76,7 +76,7 @@ function PhotoPoliosDetailRN(props: any) {
                 </li>
               )}
               <li>
-                {pInfo.filet4 && (
+                {pInfo.file4 && (
                   <li>
                     <h4>3.{pInfo.subject4}</h4>
                     {pInfo.file4 && pInfo.file4.split('.')[5] === 'mp4' ? (
