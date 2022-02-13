@@ -112,6 +112,10 @@ function PhotoPolios({ id }: any) {
   const fileName = `${folderName}/${filePath}`
   console.log(filePath)
 
+  useEffect(() => {
+    alert('무료배포버전이므로 데이터랜딩이 느린점 양해 부탁드립니다!')
+  }, [])
+
   //NOde
   const updateToggleLike = (cache: any, result: any) => {
     const {
