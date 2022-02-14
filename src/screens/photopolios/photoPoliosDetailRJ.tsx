@@ -23,7 +23,7 @@ function PhotoPoliosDetailRJ(props: any) {
         </div>
         <div className="product_text">
           <h4>{pInfo.subject}</h4>
-          <p>{pInfo.skils}</p>
+          <p>{pInfo.caption}</p>
           {pInfo.isMine ? (
             <div className="buy_box">
               <div>
