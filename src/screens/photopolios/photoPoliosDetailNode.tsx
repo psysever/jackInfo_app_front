@@ -21,7 +21,7 @@ function PhotoPoliosDetailNode(props: any) {
         </div>
         <div className="product_text">
           <h4>{pInfo.subject}</h4>
-          <p>{pInfo.caption}</p>
+          <p>{pInfo.skils}</p>
           {pInfo.isMine ? (
             <div className="buy_box">
               <div>
