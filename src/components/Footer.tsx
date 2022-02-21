@@ -1,5 +1,6 @@
 import React from 'react'
 import '../assets/css/Footer.css'
+import insta from '../assets/img/btn_instar.png'
 
 function Footer() {
   return (
@@ -19,6 +20,16 @@ function Footer() {
           <p>
             <span>주소 : 인천광역시 연수구 송도동</span>
           </p>
+          <a
+            onClick={() =>
+              window.open(
+                'https://www.instagram.com/jack.jcm.dev/?hl=ko',
+                '_blank',
+              )
+            }
+          >
+            <img className="instaimg" src={insta} alt="" />
+          </a>
           <p className="copyright en">&#169; I can do it</p>
         </div>
       </div>
