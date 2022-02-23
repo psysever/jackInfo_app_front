@@ -27,7 +27,7 @@ function Nav({ setNavOpen }: any) {
         </div>
         <ul className="nav_list">
           <li>
-            <Link to="/jackInfo_list" className="en">
+            <Link to="/about_me" className="en">
               About Me
             </Link>
           </li>
@@ -71,15 +71,23 @@ function Nav({ setNavOpen }: any) {
             </li>
           </ul>
           <ul className="nav_logout en">
-            <li>
+            {/* <li>
               <Link to="#">Logout</Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link to="#">My page</Link>
-            </li>
+            </li> */}
           </ul>
           <div className="nav_sns">
-            <Link to="#">
+            <Link
+              to="#"
+              onClick={() =>
+                window.open(
+                  'https://www.instagram.com/jack.jcm.dev/?hl=ko',
+                  '_blank',
+                )
+              }
+            >
               <img src={i_insta} alt="" />
             </Link>
             <Link to="#">
