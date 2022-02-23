@@ -113,7 +113,7 @@ function PhotoPolios({ id }: any) {
   console.log(filePath)
 
   useEffect(() => {
-    alert('무료배포이므로 데이터랜딩이 다소 느립니다(in 30seconds)')
+    alert('무료배포이므로 데이터랜딩이 다소 느려 약 20초안으로 랜딩됩니다.')
   }, [])
 
   //NOde
