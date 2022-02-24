@@ -11,14 +11,6 @@ import useUser from './useUser'
 import { gql, useMutation, useQuery, useReactiveVar } from '@apollo/client'
 import Cookies from 'js-cookie'
 
-export const Visiter_Mutation = gql`
-  mutation totalCounter($id: Int!, $count: Boolean) {
-    totalCounter(id: $id, count: $count) {
-      ok
-      error
-    }
-  }
-`
 const VIEWS_QUERY = gql`
   query totalViews($id: Int!) {
     totalViews(id: $id) {
@@ -32,39 +24,18 @@ function Header({ setNavOpen, scrollState }: any) {
   const isLoggedIn = useReactiveVar(isLoggedInVar)
   const { data }: any = useUser()
   const [count, setCount] = useState(0)
-  const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
-  Cookies.set('visiter', {
-    expires: inFifteenMinutes,
-  })
+
   const onCompleted = (data: any) => {
     const views = viewsCounter.data?.totalViews?.views
     if (views) {
       setCount(views)
     }
   }
-  const [visiterMutation] = useMutation<any, any>(Visiter_Mutation)
-  const formData = () => {
-    visiterMutation({
-      variables: {
-        id: 1,
-        count: true,
-      },
-    })
-  }
 
-  useEffect(() => {
-    const getGetCookie = Cookies.get('visiter')
-    console.log(getGetCookie)
-    if (getGetCookie) {
-      formData()
-    }
-  }, [])
   const viewsCounter = useQuery<any>(VIEWS_QUERY, {
     variables: { id: 1 },
     onCompleted,
   })
-
-  console.log(viewsCounter)
 
   return (
     <>

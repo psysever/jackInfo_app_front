@@ -52,6 +52,17 @@ import EditPhotoPoliosNode from './screens/photopolios/editPhotoPolios/EditPhoto
 import EditPhotoPoliosCss from './screens/photopolios/editPhotoPolios/EditPhotoPoliosCss'
 import EditPhotoPoliosRJ from './screens/photopolios/editPhotoPolios/EditPhotoPoliosRJ'
 import EditPhotoPoliosRN from './screens/photopolios/editPhotoPolios/EditPhotoPoliosRN'
+import { gql, useMutation } from '@apollo/client'
+import Cookies from 'js-cookie'
+
+export const Visiter_Mutation = gql`
+  mutation totalCounter($id: Int!, $count: Boolean) {
+    totalCounter(id: $id, count: $count) {
+      ok
+      error
+    }
+  }
+`
 
 function App() {
   let location = useLocation()
@@ -76,6 +87,28 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
+  Cookies.set('visiter', {
+    expires: inFifteenMinutes,
+  })
+
+  const [visiterMutation] = useMutation<any, any>(Visiter_Mutation)
+  const formData = () => {
+    visiterMutation({
+      variables: {
+        id: 1,
+        count: true,
+      },
+    })
+  }
+
+  useEffect(() => {
+    const getGetCookie = Cookies.get('visiter')
+    console.log(getGetCookie)
+    if (getGetCookie) {
+      formData()
+    }
   }, [])
 
   return (
