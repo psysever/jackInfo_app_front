@@ -25,7 +25,7 @@ function Header({ setNavOpen, scrollState }: any) {
   const { data }: any = useUser()
   const [count, setCount] = useState(0)
 
-  const onCompleted = (data: any) => {
+  const onCompleted = () => {
     const views = viewsCounter.data?.totalViews?.views
     if (views) {
       setCount(views)

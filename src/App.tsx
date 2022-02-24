@@ -98,16 +98,13 @@ function App() {
       },
     })
   }
-
+  const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
+  Cookies.set('visiter', {
+    expires: inFifteenMinutes,
+  })
   useEffect(() => {
     const getGetCookie = Cookies.get('visiter')
-    console.log(getGetCookie)
-    if (!getGetCookie) {
-      const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
-      Cookies.set('visiter', {
-        expires: inFifteenMinutes,
-      })
-
+    if (getGetCookie) {
       formData()
     }
   }, [])
