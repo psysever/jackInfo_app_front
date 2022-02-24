@@ -106,7 +106,7 @@ function App() {
   useEffect(() => {
     const getGetCookie = Cookies.get('visiter')
     console.log(getGetCookie)
-    if (getGetCookie) {
+    if (!getGetCookie) {
       formData()
     }
   }, [])
