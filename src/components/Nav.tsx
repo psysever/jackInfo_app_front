@@ -83,7 +83,7 @@ function Nav({ setNavOpen }: any) {
               to="#"
               onClick={() =>
                 window.open(
-                  'https://www.instagram.com/jack.jcm.dev/?hl=ko',
+                  'https://www.instagram.com/j.c___m/?hl=ko',
                   '_blank',
                 )
               }

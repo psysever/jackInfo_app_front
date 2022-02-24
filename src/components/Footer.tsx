@@ -22,10 +22,7 @@ function Footer() {
           </p>
           <a
             onClick={() =>
-              window.open(
-                'https://www.instagram.com/jack.jcm.dev/?hl=ko',
-                '_blank',
-              )
+              window.open('https://www.instagram.com/j.c___m/?hl=ko', '_blank')
             }
           >
             <img className="instaimg" src={insta} alt="" />
