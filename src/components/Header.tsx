@@ -31,21 +31,18 @@ function Header({ setNavOpen, scrollState }: any) {
   const { pathname } = window.location
   const isLoggedIn = useReactiveVar(isLoggedInVar)
   const { data }: any = useUser()
+  const [count, setCount] = useState(0)
   const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
   Cookies.set('visiter', {
     expires: inFifteenMinutes,
   })
   const onCompleted = (data: any) => {
-    const {
-      totalCount: { ok, error },
-    } = data
-    if (ok) {
-      console.log('ok')
+    const views = viewsCounter.data?.totalViews?.views
+    if (views) {
+      setCount(views)
     }
   }
-  const [visiterMutation] = useMutation<any, any>(Visiter_Mutation, {
-    onCompleted,
-  })
+  const [visiterMutation] = useMutation<any, any>(Visiter_Mutation)
   const formData = () => {
     visiterMutation({
       variables: {
@@ -64,7 +61,10 @@ function Header({ setNavOpen, scrollState }: any) {
   }, [])
   const viewsCounter = useQuery<any>(VIEWS_QUERY, {
     variables: { id: 1 },
+    onCompleted,
   })
+
+  console.log(viewsCounter)
 
   return (
     <>
@@ -140,12 +140,7 @@ function Header({ setNavOpen, scrollState }: any) {
                   총 방문자수
                   <hr />
                   &emsp;
-                  <span>
-                    {viewsCounter.data
-                      ? viewsCounter.data.totalViews.views
-                      : '0'}
-                    명
-                  </span>
+                  <span>{count}명</span>
                 </p>
               </li>
             </ul>
