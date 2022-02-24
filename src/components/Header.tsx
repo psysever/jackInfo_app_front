@@ -55,7 +55,7 @@ function Header({ setNavOpen, scrollState }: any) {
   useEffect(() => {
     const getGetCookie = Cookies.get('visiter')
     console.log(getGetCookie)
-    if (!getGetCookie) {
+    if (getGetCookie) {
       formData()
     }
   }, [])
