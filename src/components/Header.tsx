@@ -8,13 +8,21 @@ import i_w_hamberger from '../assets/img/hamberger-icon.png'
 import '../assets/css/Header.css'
 import { isLoggedInVar, logUserOut } from '../apollo'
 import useUser from './useUser'
-import { gql, useQuery, useReactiveVar } from '@apollo/client'
+import { gql, useMutation, useQuery, useReactiveVar } from '@apollo/client'
 import Cookies from 'js-cookie'
 
-export const Visiter_QUERY = gql`
-  query count {
-    me {
-      totalCount
+export const Visiter_Mutation = gql`
+  mutation totalCounter($id: Int!, $count: Boolean) {
+    totalCounter(id: $id, count: $count) {
+      ok
+      error
+    }
+  }
+`
+const VIEWS_QUERY = gql`
+  query totalViews($id: Int!) {
+    totalViews(id: $id) {
+      views
     }
   }
 `
@@ -23,21 +31,43 @@ function Header({ setNavOpen, scrollState }: any) {
   const { pathname } = window.location
   const isLoggedIn = useReactiveVar(isLoggedInVar)
   const { data }: any = useUser()
-  const conVisitor = useQuery<any>(Visiter_QUERY)
   const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
   Cookies.set('visiter', {
     expires: inFifteenMinutes,
   })
-  const [counter, setCounter]: any = useState(0)
+  const onCompleted = (data: any) => {
+    const {
+      totalCount: { ok, error },
+    } = data
+    if (ok) {
+      console.log('ok')
+    }
+  }
+  const [visiterMutation] = useMutation<any, any>(Visiter_Mutation, {
+    onCompleted,
+  })
+  const formData = () => {
+    visiterMutation({
+      variables: {
+        id: 1,
+        count: true,
+      },
+    })
+  }
+
   useEffect(() => {
     const getGetCookie = Cookies.get('visiter')
     console.log(getGetCookie)
-    if (getGetCookie) {
-      setCounter(counter + 1)
+    if (!getGetCookie) {
+      formData()
     }
   }, [])
-  console.log('counter')
-  console.log(counter)
+  const viewsCounter = useQuery<any>(VIEWS_QUERY, {
+    variables: { id: 1 },
+  })
+
+  console.log(viewsCounter.data.totalViews.views)
+
   return (
     <>
       <div
@@ -107,6 +137,14 @@ function Header({ setNavOpen, scrollState }: any) {
                   </p>
                 </li>
               ) : null}
+              <li>
+                <p>
+                  총 방문자수
+                  <hr />
+                  &emsp;
+                  <span>{viewsCounter.data.totalViews.views}명</span>
+                </p>
+              </li>
             </ul>
             <div className="header_icon">
               <div onClick={() => setNavOpen(true)} className="i_hamberger">
