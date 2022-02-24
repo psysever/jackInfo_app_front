@@ -88,10 +88,6 @@ function App() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-  const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
-  Cookies.set('visiter', {
-    expires: inFifteenMinutes,
-  })
 
   const [visiterMutation] = useMutation<any, any>(Visiter_Mutation)
   const formData = () => {
@@ -107,6 +103,11 @@ function App() {
     const getGetCookie = Cookies.get('visiter')
     console.log(getGetCookie)
     if (!getGetCookie) {
+      const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
+      Cookies.set('visiter', {
+        expires: inFifteenMinutes,
+      })
+
       formData()
     }
   }, [])
