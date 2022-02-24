@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/img/m-black-logo.png'
 import w_logo from '../assets/img/logo.png'
@@ -8,13 +8,36 @@ import i_w_hamberger from '../assets/img/hamberger-icon.png'
 import '../assets/css/Header.css'
 import { isLoggedInVar, logUserOut } from '../apollo'
 import useUser from './useUser'
-import { useReactiveVar } from '@apollo/client'
+import { gql, useQuery, useReactiveVar } from '@apollo/client'
+import Cookies from 'js-cookie'
+
+export const Visiter_QUERY = gql`
+  query count {
+    me {
+      totalCount
+    }
+  }
+`
 
 function Header({ setNavOpen, scrollState }: any) {
   const { pathname } = window.location
   const isLoggedIn = useReactiveVar(isLoggedInVar)
   const { data }: any = useUser()
-
+  const conVisitor = useQuery<any>(Visiter_QUERY)
+  const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000)
+  Cookies.set('visiter', {
+    expires: inFifteenMinutes,
+  })
+  const [counter, setCounter]: any = useState(0)
+  useEffect(() => {
+    const getGetCookie = Cookies.get('visiter')
+    console.log(getGetCookie)
+    if (getGetCookie) {
+      setCounter(counter + 1)
+    }
+  }, [])
+  console.log('counter')
+  console.log(counter)
   return (
     <>
       <div
