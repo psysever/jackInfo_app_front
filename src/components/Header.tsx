@@ -66,8 +66,6 @@ function Header({ setNavOpen, scrollState }: any) {
     variables: { id: 1 },
   })
 
-  console.log(viewsCounter.data.totalViews.views)
-
   return (
     <>
       <div
@@ -142,7 +140,12 @@ function Header({ setNavOpen, scrollState }: any) {
                   총 방문자수
                   <hr />
                   &emsp;
-                  <span>{viewsCounter.data.totalViews.views}명</span>
+                  <span>
+                    {viewsCounter.data
+                      ? viewsCounter.data.totalViews.views
+                      : '0'}
+                    명
+                  </span>
                 </p>
               </li>
             </ul>
