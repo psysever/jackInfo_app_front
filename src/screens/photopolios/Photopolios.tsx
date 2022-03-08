@@ -329,7 +329,7 @@ function PhotoPolios({ id }: any) {
 
   return (
     <div className="my_list">
-      <h2>PhotoPolios</h2>
+      <h2>Portfolios</h2>
       <ul className="product_tab">
         <li
           onClick={() => setTabNow(1)}
