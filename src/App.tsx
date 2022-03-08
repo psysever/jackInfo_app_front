@@ -130,36 +130,27 @@ function App() {
           {/* About Me */}
           <Route path="/about_me" component={AboutMe} />
           {/* PhotoPoliosPage */}
-          <Route path="/photopolios" component={PhotoPolios} />
+          <Route path="/portfolios" component={PhotoPolios} />
           <Route
-            path="/photopolios_detail_node"
+            path="/portfolios_detail_node"
             component={PhotoPoliosDetailNode}
           />
           <Route
-            path="/photopolios_detail_css"
+            path="/portfolios_detail_css"
             component={PhotoPoliosDetailCss}
           />
-          <Route
-            path="/photopolios_detail_rj"
-            component={PhotoPoliosDetailRJ}
-          />
-          <Route
-            path="/photopolios_detail_rn"
-            component={PhotoPoliosDetailRN}
-          />
+          <Route path="/portfolios_detail_rj" component={PhotoPoliosDetailRJ} />
+          <Route path="/portfolios_detail_rn" component={PhotoPoliosDetailRN} />
           {/* 게시물 등록하기 */}
           <Route path="/uploadform_css" component={UploadFormCss} />
           <Route path="/uploadform_rj" component={UploadFormRJ} />
           <Route path="/uploadform_rn" component={UploadFormRN} />
           <Route path="/uploadform_node" component={UploadFormNode} />
           {/* 게시물 수정하기 */}
-          <Route
-            path="/edit_photopolios_node"
-            component={EditPhotoPoliosNode}
-          />
-          <Route path="/edit_photopolios_css" component={EditPhotoPoliosCss} />
-          <Route path="/edit_photopolios_rj" component={EditPhotoPoliosRJ} />
-          <Route path="/edit_photopolios_rn" component={EditPhotoPoliosRN} />
+          <Route path="/edit_portfolios_node" component={EditPhotoPoliosNode} />
+          <Route path="/edit_portfolios_css" component={EditPhotoPoliosCss} />
+          <Route path="/edit_portfolios_rj" component={EditPhotoPoliosRJ} />
+          <Route path="/edit_portfolios_rn" component={EditPhotoPoliosRN} />
           {/* 마이페이지 */}
           <Route path="/mypage" component={Mypage} />
           <Route path="/signup_modify" component={SignUpModify} />
