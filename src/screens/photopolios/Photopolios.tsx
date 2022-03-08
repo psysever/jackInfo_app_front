@@ -329,7 +329,7 @@ function PhotoPolios({ id }: any) {
 
   return (
     <div className="my_list">
-      <h2>Portfolios</h2>
+      <h2>Portfolio</h2>
       <ul className="product_tab">
         <li
           onClick={() => setTabNow(1)}
@@ -451,7 +451,7 @@ function PhotoPolios({ id }: any) {
                     className="photo"
                     onClick={() => {
                       history.push({
-                        pathname: `/photopolios_detail_css/${i}`,
+                        pathname: `/portfolios_detail_css/${i}`,
                         state: { pInfoCss: pInfoCss[i] },
                       })
                     }}
@@ -498,7 +498,7 @@ function PhotoPolios({ id }: any) {
                     className="photo"
                     onClick={() => {
                       history.push({
-                        pathname: `/photopolios_detail_rj/${i}`,
+                        pathname: `/portfolios_detail_rj/${i}`,
                         state: { pInfoRJ: pInfoRJ[i] },
                       })
                     }}
@@ -544,7 +544,7 @@ function PhotoPolios({ id }: any) {
                     className="photo"
                     onClick={() => {
                       history.push({
-                        pathname: `/photopolios_detail_rn/${i}`,
+                        pathname: `/portfolios_detail_rn/${i}`,
                         state: { pInfoRN: pInfoRN[i] },
                       })
                     }}

@@ -28,7 +28,7 @@ function PhotoPoliosDetailCss(props: any) {
                 <p
                   onClick={() => {
                     history.push({
-                      pathname: '/edit_photopolios_css',
+                      pathname: '/edit_portfolios_css',
                       state: { pInfoCss: pInfoCss },
                     })
                   }}

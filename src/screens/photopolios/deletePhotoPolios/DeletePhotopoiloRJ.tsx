@@ -25,7 +25,7 @@ export default function DeletePhotoPolioRJ({
   const onCompleted = (data: any) => {
     if (data) {
       alert('게시물이 삭제되었습니다.')
-      window.location.replace('/photopolios')
+      window.location.replace('/portfolios')
     } else {
     }
     console.log(data)

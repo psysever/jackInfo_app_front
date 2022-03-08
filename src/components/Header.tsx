@@ -59,7 +59,7 @@ function Header({ setNavOpen, scrollState }: any) {
                 <Link to="/about_me">about Me</Link>
               </li>
               <li>
-                <Link to="/photopolios">portfolio</Link>
+                <Link to="/portfolios">portfolio</Link>
               </li>
 
               {isLoggedIn ? (

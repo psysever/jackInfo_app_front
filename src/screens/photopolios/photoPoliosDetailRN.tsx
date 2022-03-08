@@ -29,7 +29,7 @@ function PhotoPoliosDetailRN(props: any) {
                 <p
                   onClick={() => {
                     history.push({
-                      pathname: '/edit_photopolios_rn',
+                      pathname: '/edit_portfolios_rn',
                       state: { pInfoRN: pInfoRN },
                     })
                   }}

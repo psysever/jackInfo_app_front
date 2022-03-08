@@ -30,7 +30,7 @@ function PhotoPoliosDetailRJ(props: any) {
                 <p
                   onClick={() => {
                     history.push({
-                      pathname: '/edit_photopolios_rj',
+                      pathname: '/edit_portfolios_rj',
                       state: { pInfoRJ: pInfoRJ },
                     })
                   }}

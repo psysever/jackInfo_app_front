@@ -28,7 +28,7 @@ function PhotoPoliosDetailNode(props: any) {
                 <p
                   onClick={() => {
                     history.push({
-                      pathname: '/edit_photopolios_node',
+                      pathname: '/edit_portfolios_node',
                       state: { pInfoNode: pInfoNode },
                     })
                   }}
