@@ -590,7 +590,7 @@ function PhotoPolios({ id }: any) {
                     className="photo"
                     onClick={() => {
                       history.push({
-                        pathname: `/photopolios_detail_node/${i}`,
+                        pathname: `/portfolios_detail_node/${i}`,
                         state: { pInfo: pInfo[i] },
                       })
                     }}
