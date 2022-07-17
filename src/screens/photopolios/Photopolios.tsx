@@ -86,8 +86,8 @@ function PhotoPolios({ id }: any) {
   const [maxNum, setMaxNum] = useState<any>(0)
   //sort 스테이트
   const [sortPageList, setSortPageList] = useState<any>({
-    nowPage: 1,
-    s_no: 1,
+    nowPage: 0,
+    s_no: 0,
   })
 
   const [pId, setPid] = useState<any>()
