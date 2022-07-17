@@ -38,7 +38,7 @@ function Nav({ setNavOpen }: any) {
             </div>
             <ul className={navDown.nav1 ? 'on' : ''}>
               <li>
-                <Link to="/photopolios">Main</Link>
+                <Link to="/portfolios">Main</Link>
               </li>
               <li>
                 <Link to="#">준비중</Link>

@@ -78,6 +78,17 @@ function AboutMe() {
                   <h4 className="en">--경력사항--</h4>
                   <br />
                   <br />
+                  <h4 className="en">-체인랩스아이티 2022.03 - Ing... </h4>
+                  <br />
+                  <br />
+                  <h3>- 개발팀원</h3>
+                  <br />
+                  <h3>- 풀스택개발자</h3>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                   <h4 className="en">
                     - 더빌드 소프트 2021.06 - 2022.01 (8개월 근무)
                   </h4>

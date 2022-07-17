@@ -18,7 +18,7 @@ function Footer() {
             <span>이메일 : wlfah99@gmail.com</span>
           </p>
           <p>
-            <span>주소 : 인천광역시 연수구 송도동</span>
+            <span>주소 : 서울특별시 관악구</span>
           </p>
           <a
             onClick={() =>
