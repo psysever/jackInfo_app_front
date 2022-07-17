@@ -83,7 +83,7 @@ function PhotoPolios({ id }: any) {
   const isLoggedIn = useReactiveVar(isLoggedInVar)
 
   // 페이지네이션
-  const [maxNum, setMaxNum] = useState<any>(1)
+  const [maxNum, setMaxNum] = useState<any>(0)
   //sort 스테이트
   const [sortPageList, setSortPageList] = useState<any>({
     nowPage: 1,
