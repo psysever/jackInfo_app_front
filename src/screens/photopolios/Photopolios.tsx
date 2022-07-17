@@ -626,12 +626,12 @@ function PhotoPolios({ id }: any) {
             })}
           </ul>
         )}
-
+        {/* 
         <Pagenaition
           maxNum={maxNum}
           setSortPageList={setSortPageList}
           sortPageList={sortPageList}
-        />
+        /> */}
       </div>
     </div>
   )
